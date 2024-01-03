@@ -1,0 +1,85 @@
+:root {
+    --main-bg-color: #f0f0f0;
+    --sidebar-color: #363740;
+    --sidebar-font-color: #989aa1;
+    --main-text-color: #333333;
+    --accent-color: #f9fbfd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: clamp(240px, 25%, 300px) 1fr;
+    font-family: "mulish", sans-serif;
+}
+
+/*Side Bar Content*/
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(26, 26, 26);
+    background-color: var(--sidebar-color);
+    gap: 4rem;
+}
+.main {
+    background-color: var(--main-bg-color);
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-top: 40px;
+}
+.logo img {
+    max-height: 4rem;
+}
+.menu,
+.sidebar {
+    padding-left: 1.5rem;
+}
+ul li {
+    list-style-type: none;
+}
+.menu p {
+    color: var(--sidebar-font-color);
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.logo p {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--accent-color);
+}
+
+.sidebar li {
+    display: flex;
+    align-items: center;
+}
+li i {
+    font-size: 1.5rem;
+    color: var(--sidebar-font-color);
+}
+.menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+    padding-left: 0;
+}
+.sidebar li {
+    display: flex;
+    align-items: center;
+}
+li p {
+    margin: 0; /* Remove default margin for p elements */
+    padding-left: 10px; /* Adjust padding as needed */
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--sidebar-font-color);
+}
+i {
+    min-width: 50px;
+}
