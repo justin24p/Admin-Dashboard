@@ -93,10 +93,14 @@ i {
 }
 .menu i {
     padding-left: 40px;
+    width: 5rem;
 }
 .menu li:hover {
     border-left: 5px solid var(--sidebar-font-color);
     background-color: #43454f;
+}
+.menu {
+    text-align: center;
 }
 
 /*Main Content */
