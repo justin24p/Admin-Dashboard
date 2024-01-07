@@ -1,9 +1,16 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
 :root {
-    --main-bg-color: #f0f0f0;
+    --main-bg-color: #f7f8fc;
     --sidebar-color: #363740;
     --sidebar-font-color: #989aa1;
-    --main-text-color: #333333;
-    --accent-color: #f9fbfd;
+    --main-text-color: #292929;
+    --accent-color: #ffffff;
+    --main-border-color: #dfe0eb;
 }
 
 * {
@@ -13,6 +20,7 @@
 body {
     display: grid;
     min-height: 100vh;
+    height: 100%;
     grid-template-columns: clamp(240px, 25%, 300px) 1fr;
     font-family: "mulish", sans-serif;
 }
@@ -24,24 +32,22 @@ body {
     border: 1px solid rgb(26, 26, 26);
     background-color: var(--sidebar-color);
     gap: 4rem;
+    position: relative;
 }
-.main {
-    background-color: var(--main-bg-color);
-}
+
 .logo {
     display: flex;
-    align-items: center;
+    align-self: center;
     gap: 20px;
-    padding-top: 40px;
+    padding-top: 3rem;
+    padding-right: 2rem;
 }
 .logo img {
     max-height: 4rem;
 }
-.menu,
-.sidebar {
-    padding-left: 1.5rem;
-}
+
 ul li {
+    display: flex;
     list-style-type: none;
 }
 .menu p {
@@ -50,9 +56,10 @@ ul li {
     font-weight: 500;
 }
 .logo p {
-    font-size: 2.4rem;
-    font-weight: 800;
+    font-size: 2rem;
+    font-weight: 900;
     color: var(--accent-color);
+    align-self: center;
 }
 
 .sidebar li {
@@ -66,12 +73,13 @@ li i {
 .menu ul {
     display: flex;
     flex-direction: column;
-    gap: 1.3rem;
+    gap: 0.5rem;
     padding-left: 0;
 }
 .sidebar li {
     display: flex;
     align-items: center;
+    min-height: 65px;
 }
 li p {
     margin: 0; /* Remove default margin for p elements */
@@ -82,4 +90,228 @@ li p {
 }
 i {
     min-width: 50px;
+}
+.menu i {
+    padding-left: 40px;
+}
+.menu li:hover {
+    border-left: 5px solid var(--sidebar-font-color);
+    background-color: #43454f;
+}
+
+/*Main Content */
+.main {
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    row-gap: 1.5rem;
+    background-color: var(--main-bg-color);
+    max-height: 100%;
+}
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    align-items: center;
+}
+
+.elements {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+.pfp {
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid rgb(255, 255, 255);
+}
+
+.title {
+    color: var(--sidebar-color);
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+.info-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin-top: 2rem;
+}
+.info-card {
+    background-color: var(--accent-color);
+    border: 2px solid var(--main-border-color);
+    border-radius: 0.5rem;
+    text-align: center;
+    padding: 1.4rem;
+    row-gap: 1rem;
+}
+
+.info-card > p:first-child {
+    color: var(--sidebar-font-color);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+.info-card > p:last-child {
+    font-size: 2.2rem;
+    font-weight: 600;
+    padding-top: 0.5rem;
+}
+/*Mid Sec tion Content*/
+.trends img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: fill;
+}
+.mid-section {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+.trends {
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    grid-column: 1 / 2;
+    background-color: var(--accent-color);
+    border: 2px solid var(--main-border-color);
+    overflow: hidden;
+}
+.trends > p {
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding-left: 1rem;
+    padding-top: 1.5rem;
+}
+.data-cards {
+    display: grid;
+    grid-template-rows: repeat(auto, 1fr);
+    background-color: var(--accent-color);
+    border: 2px solid var(--main-border-color);
+    border-left: none;
+    border-bottom: none;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+.data-card {
+    text-align: center;
+    border-bottom: 2px solid var(--main-border-color);
+}
+.data-card > p:first-child {
+    font-size: 1rem;
+    font-weight: 550;
+    color: var(--sidebar-font-color);
+    padding-top: 1rem;
+}
+.data-card > p:last-child {
+    font-size: 1.6rem;
+    font-weight: 600;
+    padding-top: 1rem;
+}
+.card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    column-gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+.l-card {
+    background-color: var(--accent-color);
+    border: 2px solid var(--main-border-color);
+    border-radius: 0.5rem;
+}
+.slot {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--main-border-color);
+    padding: 1.5rem 1rem 1.5rem 1rem;
+}
+.card-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.card > .l-card:first-child {
+    grid-column: 1 / 2;
+}
+.card-title > p {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.card-title > a {
+    color: blue;
+    outline: none;
+    text-decoration: none;
+}
+.card-title {
+    padding: 2rem 1rem 1.5rem 1rem;
+}
+
+.info-card:hover {
+    border-color: blue; /* Change the border color to blue on hover */
+}
+.info-card:hover > p {
+    color: blue;
+}
+/*Check box*/
+
+/* checkbox styling */
+.checkbox-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: var(--main-border-color);
+}
+.checkbox {
+    position: relative;
+}
+.checkbox input[type="checkbox"] {
+    display: none; /* Hide the default checkbox */
+}
+
+.checkbox label {
+    position: relative;
+    padding-left: 30px; /* Adjust the space for the custom checkbox */
+    cursor: pointer;
+}
+
+.checkbox label:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 25px; /* Adjust the size of the circle */
+    height: 25px; /* Adjust the size of the circle */
+    border: 3px solid var(--sidebar-font-color); /* Border color of the circle */
+    border-radius: 50%; /* Turn it into a circle */
+}
+
+.checkbox label:hover:before {
+    background-color: var(--main-border-color);
+}
+.checkbox {
+    text-align: center;
+    position: relative;
+}
+.checkbox-container {
+    display: flex;
+    align-items: center;
+}
+.badge {
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    padding: 20px 40px;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+    border: 2px solid var(--main-border-color);
+    right: 1.5rem;
+}
+.checkbox-main {
+    position: relative;
 }
